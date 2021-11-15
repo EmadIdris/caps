@@ -19,15 +19,15 @@ function createOrder (){
 
 let dataForPickUp = createOrder();
 
-function pickUp (customerOrders = dataForPickUp){ 
+function pickUpOrder (customerOrders = dataForPickUp){ 
     events.emit('pickup', customerOrders) // call 
 }
 
-setInterval(pickUp,10000) // change data every 5 sec
+setInterval(pickUpOrder,5000) // change data every 5 sec
 
 events.on('delivered',makeDelivery)
 
 function makeDelivery (payload){
     console.log(`Thank you, ${payload.orderId}`)
 }
-module.exports={createOrder ,pickUp , makeDelivery }
+module.exports={createOrder ,pickUpOrder , makeDelivery }
