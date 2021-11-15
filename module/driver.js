@@ -6,7 +6,7 @@ const events = require('../events/events')
 events.on('pickup',(payload)=>deliverPhase(payload));
 
 function deliverPhase(payload){
-    setTimeout(()=>{makingPickUp(payload);},5000)
+    setTimeout(()=>{makingPickUp(payload);},1000)
     setTimeout(()=>{makingDelivery(payload)},3000)
 }
 function makingPickUp(payload){
